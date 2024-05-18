@@ -20,7 +20,9 @@ try:
             balanced = all_power_schemes[i]["guid"]
 
 except Exception as e:
+
     print(f"an unexpected error occured: {e}, put this issue on pc-cooler or see if there's any solution already, follow the link here. : https://github.com/snehccurry/PC-cooler/issues ")
+    exit()
 
 
 
@@ -34,7 +36,7 @@ def rest():
     #print("switched to cool mode")
     #sbc.set_brightness(current_brightness, display=0)
     #print("changed current_brightness for cool mode")
-    sleep(2.5)
+    sleep(0.5)
     #current_brightness=sbc.get_brightness
     #os.system('cmd /C "powercfg /S 125a7300-96d9-4d55-901e-d0d12f0e4f6d"') #cool balanced perf.
     #sleep(2)
@@ -53,7 +55,8 @@ while(True):
             #print("switched to high performance")
             #sbc.set_brightness(current_brightness, display=0)
             #print("Changed current_brightness for highperformance")
-            sleep(5)
+            sleep(2)
+            #sleep(5) on click
 
         elif (keyboard.read_key!=None and complete_heating_off==False):
             #print(keyboard.read_key())
@@ -62,8 +65,8 @@ while(True):
         else:
             rest()
     except Exception as e:
-        #print("error occured",e)
-        pass
+        print("error occured",e)
+        break
         #sleep(1)
 
 
