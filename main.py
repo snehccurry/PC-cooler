@@ -12,7 +12,7 @@ try:
     all_power_schemes = get_power_schemes()
     for i in range(len(all_power_schemes)):
 
-        if(all_power_schemes[i]["name"] == "supercool"):
+        if(all_power_schemes[i]["name"] == "cool with balanced"):
             cool_mode_guid = all_power_schemes[i]["guid"]
         elif(all_power_schemes[i]["name"] == 'High Performance'):
             high_performance_mode_guid = all_power_schemes[i]["guid"]
@@ -36,7 +36,7 @@ def rest():
     #print("switched to cool mode")
     #sbc.set_brightness(current_brightness, display=0)
     #print("changed current_brightness for cool mode")
-    sleep(0.5)
+    sleep(0.1)
     #current_brightness=sbc.get_brightness
     #os.system('cmd /C "powercfg /S 125a7300-96d9-4d55-901e-d0d12f0e4f6d"') #cool balanced perf.
     #sleep(2)
