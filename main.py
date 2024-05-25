@@ -11,13 +11,20 @@ complete_heating_off = True # this tells the script if it needs to turn the heat
 try:
     all_power_schemes = get_power_schemes()
     for i in range(len(all_power_schemes)):
-
-        if(all_power_schemes[i]["name"] == "cool with balanced"):
-            cool_mode_guid = all_power_schemes[i]["guid"]
-        elif(all_power_schemes[i]["name"] == 'High Performance'):
-            high_performance_mode_guid = all_power_schemes[i]["guid"]
-        elif(all_power_schemes[i]["name"] == 'Balanced'):
-            balanced = all_power_schemes[i]["guid"]
+        if(complete_heating_off == True):
+            if (all_power_schemes[i]["name"] == "supercool"):
+                cool_mode_guid = all_power_schemes[i]["guid"]
+            if(all_power_schemes[i]["name"] == "cool with balanced"):
+                high_performance_mode_guid = all_power_schemes[i]["guid"]
+            elif(all_power_schemes[i]["name"] == 'Balanced'):
+                balanced = all_power_schemes[i]["guid"]
+        else:
+            if(all_power_schemes[i]["name"] == "cool with balanced"):
+                cool_mode_guid = all_power_schemes[i]["guid"]
+            elif(all_power_schemes[i]["name"] == 'High Performance'):
+                high_performance_mode_guid = all_power_schemes[i]["guid"]
+            elif(all_power_schemes[i]["name"] == 'Balanced'):
+                balanced = all_power_schemes[i]["guid"]
 
 except Exception as e:
 
